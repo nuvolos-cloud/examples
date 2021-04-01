@@ -10,6 +10,13 @@ This is a code blueprint demonstrating how to work access data from a web API in
 
 ### Requirements
 
+| Image      | Compatible |
+| ----------- | ----------- |
+| JupyterLab 3 + Python 3.8 Essentials      | Yes      |
+| JupyterLab + Python 3.8 for Machine Learning | Yes       |
+| Visual Studio Code + Python 3.8 Essentials| Yes |
+
+
 Applications in Nuvolos can be extended by [installing software packages](https://docs.nuvolos.cloud/getting-started/work-with-applications/install-a-software-package). Application in Nuvolos come equipped with `conda` as the package manager. In order for this particular example to work, one needs to install via `conda` the following packages (sub-dependencies will be installed):
 
 * `wbgapi` - World Bank Data API query package
