@@ -16,8 +16,8 @@ It is important to note that the `sf` library requires certain Linux packages if
 
 | Image      | Compatible |
 | ----------- | ----------- |
-| RStudio (R 4.0.3) | Yes |
-| RStudio (R 4.0.3) for Machine Learning | Yes |
+| RStudio + R 4.0.3 | Yes |
+| RStudio + R 4.0.3 + Machine Learning | Yes |
 
 In off-Nuvolos applications, you will need to make sure that you either use pre-built binary versions of the above packages or the system dependencies are satisfied. 
 

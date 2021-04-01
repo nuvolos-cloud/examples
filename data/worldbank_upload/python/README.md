@@ -13,7 +13,7 @@ This is a code blueprint demonstrating how to work access data from a web API in
 | Image      | Compatible |
 | ----------- | ----------- |
 | JupyterLab 3 + Python 3.8 Essentials      | Yes      |
-| JupyterLab + Python 3.8 for Machine Learning | Yes       |
+| JupyterLab + Python 3.8 + Machine Learning | Yes       |
 | Visual Studio Code + Python 3.8 Essentials| Yes |
 
 
