@@ -16,9 +16,6 @@ It is important to note that the `sf` library requires certain Linux packages if
 
 | Image      | Compatible |
 | ----------- | ----------- |
-| RStudio (R 3.6.1)      | No, system libraries not available for building `sf`      |
-| RStudio (R 3.6.1) with QuantLib | No, system libraries not available for building `sf`       |
-| RStudio + R 3.6.0 + geospatial   | Yes, with minor modifications        |
 | RStudio (R 4.0.3) | Yes |
 | RStudio (R 4.0.3) for Machine Learning | Yes |
 
@@ -38,22 +35,6 @@ Pulling data can be performed with the WDI package, using the WDI method. The fo
 ```
 FDI_data <- WDI::WDI(country="all", indicator = "BX.KLT.DINV.WD.GD.ZS", start = 2000, end = 2019, extra = TRUE)
 ```
-
-#### Modifying your code for `RStudio + R 3.6.0 + geospatial`
-
-This caveat is only relevant for users of the `RStudio + R 3.6.0 + geospatial` image. By default the image uses the `2019-07-05` MRAN snapshot as the package repository. The resulting installation will provide an outdated `tmap` package version (2.2) on which the code will not function. You can specify a later snapshot date from MRAN to obtain a higher (3.3+) version of `tmap` with which the code will definitely work. For example, instead of the line
-
-```
-if (!require("tmap")) install.packages("tmap")
-```
-
-use
-
-```
-if (!require("tmap")) install.packages("tmap", repos = "https://mran.microsoft.com/snapshot/2021-03-01")
-```
- 
-You can track the availability of the `tmap` package on their [changelog](https://github.com/mtennekes/tmap/blob/master/NEWS) and [release history](https://cran.r-project.org/src/contrib/Archive/tmap/).
 
 ### Plotting the data
 
