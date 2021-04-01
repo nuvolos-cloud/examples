@@ -1,11 +1,11 @@
 # Please note that in order to install the sf package, your system needs the libudunits2-dev library to be installed.
-if (!require("tmap")) install.packages("tmap")
-if (!require("sf")) install.packages("sf")
-if (!require("dplyr")) install.packages("dplyr")
-if (!require("spData")) install.packages("spData")
-if (!require("WDI")) install.packages("WDI") 
-if (!require("magrittr")) install.packages("magrittr");library(magrittr)
-if (!require("gifski")) install.packages("gifski")
+if (!require("tmap", quietly = TRUE)) install.packages("tmap")
+if (!require("sf", quietly = TRUE)) install.packages("sf")
+if (!require("dplyr", quietly = TRUE)) install.packages("dplyr")
+if (!require("spData", quietly = TRUE)) install.packages("spData")
+if (!require("WDI", quietly = TRUE)) install.packages("WDI") 
+if (!require("magrittr", quietly = TRUE)) install.packages("magrittr");library(magrittr)
+if (!require("gifski", quietly = TRUE)) install.packages("gifski")
 
 
 FDI_data <- WDI::WDI(country="all", indicator = "BX.KLT.DINV.WD.GD.ZS", start = 2000, end = 2019, extra = TRUE)
