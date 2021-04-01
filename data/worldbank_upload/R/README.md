@@ -1,8 +1,8 @@
-# Uploading WorldBank Data to the Nuvolos Scientific Data Warehouse
+# Uploading WorldBank Data to the Scientific Data Warehouse
 
 ## Code description
 
-This is a code blueprint demonstrating how to work access data from a web API in R and then consume this data into the Nuvolos Scientific Data Warehouse (SDW).
+This is a code blueprint demonstrating how to work access data from a web API in R and then consume this data into the Scientific Data Warehouse (SDW).
 
 * Extract data from a Web API. In particular, we are using the World Bank's World Development Indicators (WDI).
 * Perform basic data transformations and plotting on the results of the Web API queries.
@@ -12,7 +12,7 @@ Applications in Nuvolos can be extended by [installing software packages](https:
 
 ### Requirements
 
-It is important to note that the `sf` library requires certain Linux packages if you are building packages from source. Nuvolos-supported images, we have the following compatibility:
+It is important to note that the `sf` library requires certain Linux packages if you are building packages from source. The following images are compatible with this code example:
 
 | Image      | Compatible |
 | ----------- | ----------- |
