@@ -8,11 +8,13 @@ This is a code blueprint demonstrating how to work access data from a web API in
 * Perform basic data transformations and plotting on the results of the Web API queries.
 * Insert data into the Nuvolos SDW.
 
-Applications in Nuvolos can be extended by [installing software packages](https://docs.nuvolos.cloud/getting-started/work-with-applications/install-a-software-package). In this example we are relying on R's package management system to first install packages. Any installed packages will be retained after the application is restarted. Applications can be distributed to spare the cost of building and installing packages again and again. Distribution's other main benefit is the fact that an application can be proliferated in the exact state it was created in, changing repository layout has no effect on an application that is proliferated via distribution.
-
 ### Requirements
 
-It is important to note that the `sf` library requires certain Linux packages if you are building packages from source. The following images are compatible with this code example:
+As a first step, make sure you [activate tables](https://docs.nuvolos.cloud/data/the-table-view#activating-tables) in your space for the example to work. Once tables are activated, you need to restart your application.
+
+Applications in Nuvolos can be extended by [installing software packages](https://docs.nuvolos.cloud/getting-started/work-with-applications/install-a-software-package). In this example we are relying on R's package management system to first install packages. Any installed packages will be retained after the application is restarted. Applications can be distributed to spare the cost of building and installing packages again and again. Distribution's other main benefit is the fact that an application can be proliferated in the exact state it was created in, changing repository layout has no effect on an application that is proliferated via distribution.
+
+The following images are compatible with this code example:
 
 | Image      | Compatible |
 | ----------- | ----------- |
@@ -29,6 +31,8 @@ The libraries we are relying on:
 * `nuvolos` - Interacting with the Nuvolos SDW, implicitly attaches `DBI`.
 * `magrittr`, `dplyr` - Simplify data transformations
 * `gifski` - In order for `tmap::animation` to be able to generate GIFs
+
+### Pulling data
 
 Pulling data can be performed with the WDI package, using the WDI method. The following code pulls the `BX.KLT.DINV.WD.GD.ZS` series with additional metadata from the year 2000 to 2019.
 
@@ -59,7 +63,7 @@ In order to load the data to the SDW, in an in-Nuvolos application, you only nee
 
 ```
 con <- nuvolos::get_connection()
-dbWriteTable(con, "FDI_GDP_PCT_R", FDI_data %>% dplyr::select(iso3c, year, country, BX.KLT.DINV.WD.GD.ZS), overwrite=TRUE)
+dbWriteTable(con, "FDI_GDP_PCT", FDI_data %>% dplyr::select(iso3c, year, country, BX.KLT.DINV.WD.GD.ZS), overwrite=TRUE)
 ```
 
 This bit needs to be slightly modified if you are working off-Nuvolos (you need to make sure you have the correct credentials), please consult our [documentation](https://docs.nuvolos.cloud/data/access-data-from-applications) on how to do this.
@@ -71,9 +75,9 @@ Adding table and column comments is a nice convenience feature to provide end-us
 In the context of R, sending SQL statements via `DBI::dbExecute` will perform the necessary action. Please note the [escaping and quoting](https://docs.snowflake.com/en/sql-reference/identifiers-syntax.html) of the column names in the statements.
 
 ```
-dbExecute(con, "COMMENT ON COLUMN FDI_GDP_PCT_R.\"BX.KLT.DINV.WD.GD.ZS\" IS 'Foreign Direct Investment as Pct of GDP'")
-dbExecute(con, "COMMENT ON COLUMN FDI_GDP_PCT_R.\"year\" IS 'Time Period'")
-dbExecute(con, "COMMENT ON COLUMN FDI_GDP_PCT_R.\"iso3c\" IS '3-Letter ISO Country Code'")
-dbExecute(con, "COMMENT ON COLUMN FDI_GDP_PCT_R.\"country\" IS 'Natural English country name'")
-dbExecute(con, "COMMENT ON TABLE FDI_GDP_PCT_R IS 'Foreign Direct Investment, Net Inflows (% of GDP)'")
+dbExecute(con, "COMMENT ON COLUMN FDI_GDP_PCT.\"BX.KLT.DINV.WD.GD.ZS\" IS 'Foreign Direct Investment as Pct of GDP'")
+dbExecute(con, "COMMENT ON COLUMN FDI_GDP_PCT.\"year\" IS 'Time Period'")
+dbExecute(con, "COMMENT ON COLUMN FDI_GDP_PCT.\"iso3c\" IS '3-Letter ISO Country Code'")
+dbExecute(con, "COMMENT ON COLUMN FDI_GDP_PCT.\"country\" IS 'Natural English country name'")
+dbExecute(con, "COMMENT ON TABLE FDI_GDP_PCT IS 'Foreign Direct Investment, Net Inflows (% of GDP)'")
 ```

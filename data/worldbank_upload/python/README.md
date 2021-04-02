@@ -10,6 +10,8 @@ This is a code blueprint demonstrating how to work access data from a web API in
 
 ### Requirements
 
+As a first step, make sure you [activate tables](https://docs.nuvolos.cloud/data/the-table-view#activating-tables) in your space for the example to work. Once tables are activated, you need to restart your application.
+
 | Image      | Compatible |
 | ----------- | ----------- |
 | JupyterLab 3 + Python 3.8 Essentials      | Yes      |
