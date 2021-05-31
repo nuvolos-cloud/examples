@@ -14,9 +14,9 @@ As a first step, make sure you activate tables in your space for the example to 
 
 **All versions of the Stata application are supported.**
 
-We rely on certain standard external `ado` libraries available in `scc`.
+We rely on certain standard external `ado` libraries available in Boston College Statistical Software Components (SSC).
 
-| External library | Functionality provided | Available in `scc` |
+| External library | Functionality provided | Available in SSC |
 | ---------------- | ---------------------- | ---------------- |
 | `spmap` | Create map visualizations in Stata | Yes |
 | `shp2dta` | Create `dta` file format from regular `shp` file format | Yes |
