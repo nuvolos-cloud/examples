@@ -18,6 +18,7 @@ cap erase world_shape_coord.dta
 
 * Obtain a world map and turn it into a Stata dataset format
 copy https://github.com/nvkelso/natural-earth-vector/raw/master/110m_cultural/ne_110m_admin_0_countries.shp ne_110m_admin_0_countries.shp
+copy https://github.com/nvkelso/natural-earth-vector/raw/master/110m_cultural/ne_110m_admin_0_countries.dbf ne_110m_admin_0_countries.dbf
 shp2dta using "ne_110m_admin_0_countries.shp", database(world_shape) coordinates(world_shape_coord) genid(id) replace
 
 * Correct iso_a2
