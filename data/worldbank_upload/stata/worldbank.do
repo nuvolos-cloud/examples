@@ -10,8 +10,8 @@ ssc install wbopendata
 * ------------------------------------------------------------------------------
 *     Data
 * ------------------------------------------------------------------------------
-! mkdir -p ~/files/data
-cd ~/files/data
+! mkdir -p ~/files/.wd
+cd ~/files/.wd
 
 cap erase world_shape.dta
 cap erase world_shape_coord.dta
