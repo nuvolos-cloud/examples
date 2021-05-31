@@ -29,7 +29,7 @@ In order to install the above scripts, you can use the usual `ssc install packag
 
 We obtain data from two sources:
 
-* The map data is taken from a public [`github` repository](https://github.com/nvkelso/natural-earth-vector/raw/master/110m_cultural/ne_110m_admin_0_countries.shp). More formats are available besides `shp` in the same folder. The map is also uploaded [here](https://www.naturalearthdata.com/downloads/110m-cultural-vectors/110m-admin-0-countries/).
+* The map data is taken from a public [repository](https://www.naturalearthdata.com/downloads/110m-cultural-vectors/110m-admin-0-countries/).
 * The World Bank Data is pulled via the `wbopendata` package.
 
 The particular call to obtain the World bank data is, to obtain the Net FDI Inflow in percentage of GDP per country:
