@@ -6,7 +6,7 @@ clear
 ssc install spmap
 ssc install shp2dta
 ssc install geo2xy
-scc install wbopendata
+ssc install wbopendata
 * ------------------------------------------------------------------------------
 *     Data
 * ------------------------------------------------------------------------------
