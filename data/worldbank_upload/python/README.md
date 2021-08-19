@@ -105,6 +105,8 @@ Finally, after transforming the data, we load the table into the database with t
 nuvolos.to_sql(df = FDI_GDP_PCT_data_melt, name = "FDI_GDP_PCT", con = con, if_exists='replace', index=False)
 ```
 
+> In case you get an access denied error for the above command, most probably some other user created a table with the same name. You can either change the 'name' parameter in the above call or use the Web UI to delete the table
+
 ### Adding column or table comments
 
 Adding table and column comments is a nice convenience feature to provide end-users with a light and easy-to-access quick documentation. Please refer to the [service documentation](https://docs.snowflake.com/en/sql-reference/sql/comment.html) on the details of provide object comments.
