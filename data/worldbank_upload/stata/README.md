@@ -49,7 +49,9 @@ odbc exec("DROP TABLE IF EXISTS FDI_GDP_PCT_STATA;"), connectionstring($conn_str
 odbc insert, table("FDI_GDP_PCT_STATA") connectionstring($conn_str) sqlshow create block
 ```
 
-The first statement makes sure that the table does not exist before uploading to it. The second statement creates the `FDI_GDP_PCT_STATA` table and uploads all the variables in the memory to this table. It is very important to use the `block` modifier as this will greatly increase data writing performance to the database.
+The first statement makes sure that the table does not exist before uploading to it. In case you receive an access denied error, it means probably some other user has created the table with the same name. Use the Web UI to delete the existing table or pick another name. 
+
+The second statement creates the `FDI_GDP_PCT_STATA` table and uploads all the variables in the memory to this table. It is very important to use the `block` modifier as this will greatly increase data writing performance to the database.
 
 ### Country codes
 
