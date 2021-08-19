@@ -68,6 +68,8 @@ dbWriteTable(con, "FDI_GDP_PCT", FDI_data %>% dplyr::select(iso3c, year, country
 
 This bit needs to be slightly modified if you are working off-Nuvolos (you need to make sure you have the correct credentials), please consult our [documentation](https://docs.nuvolos.cloud/data/access-data-from-applications) on how to do this.
 
+> In case you get an access denied error for the dbWriteTable command, most probably some other user created a table with the same name. You can either change the table name (second parameter in the above call) or use the Web UI to delete the existing table.
+
 ### Adding column or table comments
 
 Adding table and column comments is a nice convenience feature to provide end-users with a light and easy-to-access quick documentation. Please refer to the [service documentation](https://docs.snowflake.com/en/sql-reference/sql/comment.html) on the details of provide object comments.
