@@ -26,6 +26,8 @@ The script will install all required add-ons from the `addon` folder.
 The example performs the following steps:
 
 1. It reads foreign direct investment data from the World Bank Data API,
-2. It stages the downloaded data as the table `"FDI_GDP_PCT_MATLAB`,
+2. It stages the downloaded data as the table `FDI_GDP_PCT_MATLAB`,
 3. It stages descriptive data on countries as the table `COUNTRIES`
 4. It runs a query to retrieve country names, ISO3 codes and foreign investment data and plots it on a world map using the `borders` add-on.
+
+> In case you get an access denied error for staging the data, most probably some other user created a table with the same name. You can either change the 'name' parameter in the above call or use the Web UI to delete the table
